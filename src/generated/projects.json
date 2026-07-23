@@ -1,0 +1,55 @@
+[
+  {
+    "id": "1_greeting",
+    "filename": "1_greeting.py",
+    "relativePath": "1_greeting.py",
+    "title": "Greeting Generator",
+    "description": "A simple program that asks for your name and says hello!",
+    "concepts": [],
+    "order": 1,
+    "source": "\"\"\"Greeting Generator\nOrder: 1\nDemo: true\n\nA simple program that asks for your name and says hello!\n\"\"\"\n\nname = input(\"What is your name? \")\ncolor = input(\"What is your favorite color? \")\n\nprint(\"\\n---\")\nprint(f\"Hello, {name}!\")\nprint(f\"{color} is a beautiful color!\")\nprint(\"---\")\n",
+    "compatibility": "runs-unchanged",
+    "unsupportedImports": [],
+    "compatibilityReason": "No unsupported imports detected.",
+    "syntaxError": null,
+    "isDemo": true
+  },
+  {
+    "id": "2_number_guess",
+    "filename": "2_number_guess.py",
+    "relativePath": "2_number_guess.py",
+    "title": "Number Guessing Game",
+    "description": "Try to guess the secret number in 3 tries!",
+    "concepts": [
+      "conditionals",
+      "exceptions",
+      "loops"
+    ],
+    "order": 2,
+    "source": "\"\"\"Number Guessing Game\nOrder: 2\nDemo: true\n\nTry to guess the secret number in 3 tries!\n\"\"\"\n\nsecret = 7\nprint(\"I'm thinking of a number between 1 and 10.\")\nprint(\"You have 3 tries to guess it!\\n\")\n\nfor attempt in range(1, 4):\n    try:\n        guess = int(input(f\"Attempt {attempt} - Your guess: \"))\n        if guess == secret:\n            print(\"🎉 You guessed it! You win!\")\n            break\n        elif guess < secret:\n            print(\"Too low!\")\n        else:\n            print(\"Too high!\")\n    except ValueError:\n        print(\"Please enter a valid number.\")\n\nelse:\n    print(f\"\\nGame Over! The secret number was {secret}.\")\n",
+    "compatibility": "runs-unchanged",
+    "unsupportedImports": [],
+    "compatibilityReason": "No unsupported imports detected.",
+    "syntaxError": null,
+    "isDemo": true
+  },
+  {
+    "id": "3_turtle_test",
+    "filename": "3_turtle_test.py",
+    "relativePath": "3_turtle_test.py",
+    "title": "Turtle Drawing (Broken)",
+    "description": "This program tries to use the turtle graphics library, which doesn't work in the browser!",
+    "concepts": [
+      "loops"
+    ],
+    "order": 3,
+    "source": "\"\"\"Turtle Drawing (Broken)\nOrder: 3\nDemo: true\n\nThis program tries to use the turtle graphics library, which doesn't work in the browser!\n\"\"\"\n\nimport turtle\n\nt = turtle.Turtle()\nfor _ in range(4):\n    t.forward(100)\n    t.right(90)\n    \nturtle.done()\n",
+    "compatibility": "cannot-run",
+    "unsupportedImports": [
+      "turtle"
+    ],
+    "compatibilityReason": "Turtle graphics require a desktop environment.",
+    "syntaxError": null,
+    "isDemo": true
+  }
+]

@@ -1,0 +1,21 @@
+const { chromium } = require('@playwright/test');
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+  await page.goto('http://127.0.0.1:4173/vedanshi/#/project/2_number_guess');
+  await page.waitForSelector('.terminal-wrapper');
+  await page.click('button:has-text("Run")');
+  await page.waitForSelector('.input-prompt-container');
+  await page.waitForTimeout(500); 
+  const container = await page.locator('.project-details-container').boundingBox();
+  const workspace = await page.locator('.project-workspace').boundingBox();
+  const terminalWrapper = await page.locator('.terminal-wrapper').boundingBox();
+  const terminalContainer = await page.locator('.terminal-container').boundingBox();
+  const inputOverlay = await page.locator('.input-overlay').boundingBox();
+  console.log("project-details-container:", container);
+  console.log("project-workspace:", workspace);
+  console.log("terminal-wrapper:", terminalWrapper);
+  console.log("terminal-container:", terminalContainer);
+  console.log("input-overlay:", inputOverlay);
+  await browser.close();
+})();

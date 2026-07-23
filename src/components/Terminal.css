@@ -1,0 +1,48 @@
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1E1E1E;
+  color: #D4D4D4;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 1rem;
+  padding: 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  border-radius: 0;
+  line-height: 1.5;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-line.error {
+  color: #F87171;
+  background-color: rgba(248, 113, 113, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-left: 3px solid #F87171;
+  margin: 0.2rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.terminal-line.system {
+  color: #60A5FA;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1rem;
+  background-color: #D4D4D4;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

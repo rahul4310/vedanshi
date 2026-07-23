@@ -1,0 +1,82 @@
+.run-controls-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.controls-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-control {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.btn-control:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-run {
+  background: #48BB78;
+  color: white;
+}
+
+.btn-run:not(:disabled):hover {
+  background: #38A169;
+  transform: translateY(-1px);
+}
+
+.btn-stop {
+  background: #F56565;
+  color: white;
+}
+
+.btn-stop:not(:disabled):hover {
+  background: #E53E3E;
+  transform: translateY(-1px);
+}
+
+.btn-clear {
+  background: #EDF2F7;
+  color: #4A5568;
+}
+
+.btn-clear:not(:disabled):hover {
+  background: #E2E8F0;
+}
+
+.worker-status {
+  font-size: 0.8rem;
+  color: #718096;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #CBD5E0;
+  border-top-color: #4299E1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,153 @@
+/* System fonts only */
+
+:root {
+  --primary: #FF9A9E;
+  --secondary: #FECFEF;
+  --accent: #667EEA;
+  --text-main: #2D3748;
+  --text-muted: #5A6B80;
+  --bg-main: #F7FAFC;
+  --panel-bg: #FFFFFF;
+  --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus outlines for accessibility */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E0; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0; 
+}
+
+/* Cross Origin Gate */
+.coi-gate {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #FFF5F5;
+  border: 2px solid #FEB2B2;
+  border-radius: 12px;
+  color: #C53030;
+  font-family: inherit;
+}
+.coi-gate h2 {
+  margin-top: 0;
+}
+.coi-gate ul {
+  margin: 1rem 0 1rem 2rem;
+}
+.coi-gate code {
+  background: #FED7D7;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Banners */
+.validation-error-banner {
+  background: #FED7D7;
+  color: #9B2C2C;
+  padding: 1rem;
+  border-bottom: 2px solid #FEB2B2;
+  font-size: 0.95rem;
+}
+.validation-error-banner ul {
+  margin: 0.5rem 0 0 1.5rem;
+}
+.coi-warning-banner {
+  background: #FEFCBF;
+  color: #975A16;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #F6E05E;
+}
+
+/* Entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Utility class for staggered animations */
+.animate-in {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Loading fallback */
+.loading-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}

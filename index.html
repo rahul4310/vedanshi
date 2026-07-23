@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedanshi | Python Portfolio</title>
+    <meta name="description" content="Vedanshi's interactive Python programming portfolio. View, edit, and run Python programs right in your browser." />
+
+
+    <!-- Google Fonts: Outfit + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!--
+      coi-serviceworker: Enables cross-origin isolation on GitHub Pages
+      by injecting COOP/COEP headers via a service worker.
+      Required for SharedArrayBuffer (used by synchronous input()).
+      On first load the page will reload once to activate the service worker.
+      The script path must work under the GitHub Pages subpath.
+    -->
+    <script>
+      // Load coi-serviceworker from the same directory as this page.
+      // On GitHub Pages (e.g. /vedanshi-website/), the coi-serviceworker.js
+      // file is in the same directory. We derive the base from the current URL.
+      (function() {
+        // Get the directory of the current page
+        var path = window.location.pathname;
+        // Ensure trailing slash (handles both /vedanshi-website/ and /vedanshi-website/index.html)
+        var lastSlash = path.lastIndexOf('/');
+        var basePath = path.substring(0, lastSlash + 1);
+
+        var script = document.createElement('script');
+        script.src = basePath + 'coi-serviceworker.js';
+        document.head.appendChild(script);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
