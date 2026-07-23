@@ -34,6 +34,7 @@ export function ProjectDetails({ coiAvailable }: ProjectDetailsProps) {
   
   const [sourceCode, setSourceCode] = useState(project?.source || "");
   const [isEditing, setIsEditing] = useState(false);
+  const [mobileTab, setMobileTab] = useState<'code' | 'output'>('code');
   const isDirty = sourceCode !== (project?.source || "");
 
   const {
@@ -69,6 +70,7 @@ export function ProjectDetails({ coiAvailable }: ProjectDetailsProps) {
 
   const handleRun = useCallback(() => {
     runCode(sourceCode);
+    setMobileTab('output');
   }, [runCode, sourceCode]);
 
   const handleRestore = () => {
@@ -108,7 +110,22 @@ export function ProjectDetails({ coiAvailable }: ProjectDetailsProps) {
 
       <CompatibilityBanner project={project} />
 
-      <main className="project-workspace">
+      <div className="mobile-tabs">
+        <button 
+          className={`tab-btn ${mobileTab === 'code' ? 'active' : ''}`}
+          onClick={() => setMobileTab('code')}
+        >
+          📝 Code
+        </button>
+        <button 
+          className={`tab-btn ${mobileTab === 'output' ? 'active' : ''}`}
+          onClick={() => setMobileTab('output')}
+        >
+          🚀 Output
+        </button>
+      </div>
+
+      <main className={`project-workspace mobile-tab-${mobileTab}`}>
         <section className="editor-section">
           <div className="section-header">
             <h3>📝 Code ({project.filename})</h3>

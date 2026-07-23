@@ -168,12 +168,64 @@
   border-bottom: 1px solid #FEB2B2;
 }
 
+.mobile-tabs {
+  display: none;
+}
+
 @media (max-width: 900px) {
+  .mobile-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    background: #EDF2F7;
+    padding: 0.35rem;
+    border-radius: 12px;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #4A5568;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+  
+  .tab-btn.active {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: #2D3748;
+  }
+
   .project-workspace {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    /* Instead of stacking endlessly, we restrict height */
+    height: 60vh;
   }
+
   .project-details-container {
-    height: auto;
+    height: 100vh;
+  }
+
+  /* Hide the inactive section */
+  .mobile-tab-code .execution-section {
+    display: none;
+  }
+  
+  .mobile-tab-output .editor-section {
+    display: none;
+  }
+  
+  /* Active section takes full height of the restricted workspace */
+  .editor-section, .execution-section {
+    flex-grow: 1;
+    height: 100%;
   }
 }
 
