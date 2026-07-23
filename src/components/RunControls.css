@@ -80,3 +80,19 @@
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+@media (max-width: 600px) {
+  .btn-control {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  .run-controls-inline {
+    gap: 0.25rem;
+  }
+  .controls-buttons {
+    gap: 0.25rem;
+  }
+  .worker-status {
+    font-size: 0.7rem;
+  }
+}
