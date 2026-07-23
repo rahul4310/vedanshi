@@ -9,7 +9,7 @@
     "predev": "npm run validate",
     "dev": "run-p dev:vite watch:projects",
     "dev:vite": "vite",
-    "prebuild": "npm run validate",
+    "prebuild": "npm run validate && node scripts/generate_seo.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

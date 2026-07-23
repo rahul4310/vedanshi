@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rahul4310.github.io/vedanshi/sitemap.xml
